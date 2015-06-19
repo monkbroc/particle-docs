@@ -49,6 +49,18 @@ module.exports = (grunt) ->
             dest: '<%= config.dist %>'
           }
         ]
+
+      # S3 forwards 404's to this page
+      "page-not-found":
+        files: [
+          {
+            expand: true
+            cwd: '<%= config.content %>'
+            src: ['page-not-found.md']
+            dest: '<%= config.dist %>'
+          }
+        ]
+
       photon:
         files: [
           {
