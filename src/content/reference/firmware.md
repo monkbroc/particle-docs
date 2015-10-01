@@ -3263,7 +3263,9 @@ Specifies a function to call when the color of the RGB LED changes. It can be us
 
 void ledChangeHandler(uint8_t r, uint8_t g, uint8_t b) {
   // Duplicate the green color to an external LED
-  analogWrite(D0, g);
+  analogWrite(D0, 255 - g);
+  // Depending on the type of LED you may need to use this line instead:
+  // analogWrite(D0, g);
 }
 
 void setup()
